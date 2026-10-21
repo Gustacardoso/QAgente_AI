@@ -1,0 +1,79 @@
+{
+  "goal": "Fazer login com credenciais válidas e ver a mensagem de sucesso",
+  "url": "http://localhost:64551",
+  "passed": true,
+  "history": [
+    {
+      "attempt": 1,
+      "plan": {
+        "name": "Fazer login com credenciais válidas e ver a mensagem de suce",
+        "steps": [
+          {
+            "action": "goto",
+            "value": "http://localhost:64551/"
+          },
+          {
+            "action": "fill",
+            "selector": "#email",
+            "value": "qa@teste.com"
+          },
+          {
+            "action": "fill",
+            "selector": "#password",
+            "value": "123456"
+          },
+          {
+            "action": "click",
+            "selector": "#btn-login"
+          },
+          {
+            "action": "expect_text",
+            "value": "Login realizado com sucesso"
+          }
+        ]
+      },
+      "result": {
+        "passed": false,
+        "failedStep": 3,
+        "step": {
+          "action": "click",
+          "selector": "#btn-login"
+        },
+        "error": "page.click: Timeout 3000ms exceeded."
+      }
+    },
+    {
+      "attempt": 2,
+      "plan": {
+        "name": "Fazer login com credenciais válidas e ver a mensagem de suce",
+        "steps": [
+          {
+            "action": "goto",
+            "value": "http://localhost:64551/"
+          },
+          {
+            "action": "fill",
+            "selector": "#email",
+            "value": "qa@teste.com"
+          },
+          {
+            "action": "fill",
+            "selector": "#password",
+            "value": "123456"
+          },
+          {
+            "action": "click",
+            "selector": "[data-testid=\"submit-login\"]"
+          },
+          {
+            "action": "expect_text",
+            "value": "Login realizado com sucesso"
+          }
+        ]
+      },
+      "result": {
+        "passed": true
+      }
+    }
+  ]
+}

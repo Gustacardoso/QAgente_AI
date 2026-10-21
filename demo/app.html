@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><title>Demo App - Login</title></head>
+<body>
+  <h1>Bem-vindo</h1>
+  <form id="login-form">
+    <label>E-mail <input id="email" name="email" type="email" placeholder="seu@email.com"></label><br>
+    <label>Senha <input id="password" name="password" type="password" placeholder="Senha"></label><br>
+    <button type="submit" data-testid="submit-login">Entrar</button>
+  </form>
+  <p id="msg" role="alert"></p>
+  <script>
+    document.getElementById('login-form').addEventListener('submit', e => {
+      e.preventDefault();
+      const ok = email.value === 'qa@teste.com' && password.value === '123456';
+      document.getElementById('msg').textContent = ok ? 'Login realizado com sucesso' : 'Credenciais inválidas';
+      if (ok) document.querySelector('h1').textContent = 'Painel do usuário';
+    });
+  </script>
+</body>
+</html>
